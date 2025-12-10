@@ -12,8 +12,3 @@ How to preview locally:
    python -m http.server 8000
 
    then open: http://localhost:8000/simple_portfolio/index.html
-
-Notes and next steps:
-
-- The site is static and uses inline SVG icons for contacts; update the hrefs to your real profiles.
-- I used content from the existing project files for the sample copy. If you want, I can extract additional sections from `academic_cv.pdf` and add them.

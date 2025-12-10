@@ -22,37 +22,45 @@ html,body{height:100%;margin:0;font-family:Inter, Roboto, system-ui, -apple-syst
 .wrap{margin:0;padding:0;display:block;align-items:start}
 
 /* Sidebar: fixed to left edge, padding only on top/bottom to avoid gap; flex layout */
-.sidebar{position:fixed;top:0;left:0;width:var(--sidebar-size);height:100vh;padding:16px 12px;border-radius:0;background:var(--sidebar-bg);color:#fff;border-right:1px solid rgba(255,255,255,0.06);box-shadow:var(--shadow);overflow:auto;display:flex;margin-right:10px;z-index:1}
+.sidebar{position:fixed;top:0;left:0;width:var(--sidebar-size);height:100vh;padding:16px 38px;border-radius:0;background:var(--sidebar-bg);color:#fff;border-right:1px solid rgba(255,255,255,0.06);box-shadow:var(--shadow);overflow:auto;display:flex;margin-right:10px;z-index:1}
 
 /* ensure main content sits to the right of the fixed sidebar with 50px gap
   Use left padding on the page wrapper so the fixed sidebar cannot overlap content. */
 .wrap{padding-left:calc(var(--sidebar-size) + 50px)}
 .main{margin-left:0; width:100%; padding:0 16px; margin-top:0; margin-bottom:0; margin-right:0; box-sizing:border-box;position:relative;z-index:0}
 
-.side-inner{display:flex;flex-direction:column;gap:12px;height:100%;padding:0px 18px;align-items:center;text-align:center}
-.name{font-size:1.4rem;margin:0 0 4px 0;line-height:1;font-family:Merriweather, serif}
-.role{color:var(--accent-bright);font-weight:600;font-size:0.95rem}
+.side-inner{display:flex;flex-direction:column;gap:6px;height:100%;padding:0px 38px;align-items:center;justify-content:space-between;text-align:center}
+.name{font-size:1.05rem;margin:0 0 4px 0;line-height:1.05;font-family:Merriweather, serif}
+.role{color:var(--accent-bright);font-weight:600;font-size:0.82rem}
 
 .sidebar-bio{color:rgba(255,255,255,0.92);font-size:0.95rem;line-height:1.45;margin-top:6px;list-style:disc;padding-left:18px;text-align:justify;text-justify:inter-word}
 
-.avatar{width:80px;height:80px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#3b82f6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:22px;margin:0 auto 6px;box-shadow:0 8px 20px rgba(0,0,0,0.18);overflow:hidden}
+.avatar{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--accent),#3b82f6);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;margin:0 auto 6px;box-shadow:0 6px 16px rgba(0,0,0,0.14);overflow:hidden}
 .avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;display:block}
 .avatar span{display:inline-block;line-height:1}
 
 
-.side-nav{display:flex;flex-direction:column;gap:6px;margin-top:8px;width:100%}
-.sidebar .nav-link{padding:8px 10px;border-radius:8px;color:rgba(255,255,255,0.95);transition:all .14s ease;border:1px solid transparent;text-align:center;text-decoration:none}
+.side-nav{display:flex;flex-direction:column;gap:6px;margin-top:6px;width:100%}
+.sidebar .nav-link{padding:6px 8px;border-radius:8px;color:rgba(255,255,255,0.95);transition:all .14s ease;border:1px solid transparent;text-align:center;text-decoration:none;font-size:0.92rem}
 .sidebar .nav-link:hover{color:var(--accent-bright);background:rgba(255,255,255,0.06);border-color:rgba(255,255,255,0.04);transform:translateX(4px);font-weight:600}
 .nav-link.active{font-weight:600;color:var(--accent-bright)}
 
 .contacts{margin-top:auto;display:flex;flex-direction:row;gap:10px;justify-content:center;align-items:center}
 .contact{display:inline-flex;align-items:center;justify-content:center;padding:0;border-radius:6px;color:var(--muted);border:none;transition:all .14s ease;cursor:pointer}
-.contact .icon{width:32px;height:32px;display:inline-block}
-.contact svg{pointer-events:none}
+.contact .icon{width:24px;height:24px;display:inline-block;color:var(--accent-bright);fill:var(--accent-bright);}
+.contact svg{pointer-events:none; color:var(--accent-bright); fill:var(--accent-bright);}
+.contact:hover .icon, .contact:focus .icon {
+  color: #fff;
+  fill: #fff;
+}
+.contact:hover, .contact:focus {
+  background: var(--accent-bright);
+  box-shadow: 0 2px 8px rgba(14,165,255,0.18);
+}
 
 /* contact info (emails) below icons — non-overlapping and small */
-.contact-info{width:100%;text-align:center;margin-top:8px}
-.contact-info h6{margin:0;font-size:0.78rem;color:rgba(255,255,255,0.85);font-weight:500}
+.contact-info{width:100%;text-align:center;margin-top:4px}
+.contact-info h6{margin:0;font-size:0.7rem;color:rgba(255,255,255,0.85);font-weight:500}
 
 /* Mobile menu toggle button (hidden on larger screens) */
 .menu-toggle{display:none;background:transparent;border:1px solid rgba(255,255,255,0.08);color:rgba(255,255,255,0.95);padding:6px 10px;border-radius:8px;font-size:18px;cursor:pointer}
